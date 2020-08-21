@@ -17,6 +17,7 @@ const defaults = {};
  * @param    {Object} options
  */
 const onPlayerReady = function(player, options) {
+  console.log('here');
   player.addClass('vjs-nle-controls');
   let framerate = options.framerate ? options.framerate : 24.0;
   let duration = options.duration ? () => {return options.duration} : () => {return player.duration()};
@@ -41,10 +42,10 @@ const initControls = function(player, framerate, duration) {
     let keyDown = function keyDown(event){
       const keyName = event.keyCode;
       switch(keyName){
-        case 37:
+        case 40: // down
           frameReverse(player, frame);
           break;
-        case 39:
+        case 38: // up
           frameForward(player, frame, duration);
           break;
       }
