@@ -30,7 +30,8 @@
     "version": "is-prerelease || npm run update-changelog && git add CHANGELOG.md",
     "watch": "npm-run-all -p watch:*",
     "watch:js": "npm run build:js -- -w",
-    "prepublishOnly": "npm-run-all build test:verify"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm-run-all test:verify"
   },
   "engines": {
     "node": ">=8",
@@ -63,6 +64,7 @@
   },
   "dependencies": {
     "global": "^4.3.2",
+    "shx": "^0.3.3",
     "video.js": "^6 || ^7"
   },
   "devDependencies": {
